@@ -1,0 +1,438 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  color: rgb(51, 51, 51);
+}
+
+button {
+  font-family: "Muli", sans-serif;
+}
+
+path,
+i,
+svg {
+  pointer-events: none;
+}
+
+.colors {
+  min-height: 80vh;
+  display: flex;
+  color: rgb(212, 212, 212);
+}
+
+.color {
+  height: 80vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  overflow: hidden;
+}
+
+.color h2 {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0%;
+  background: rgb(255, 255, 255);
+  padding: 1rem;
+  color: black;
+  width: 80%;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  transform: translateY(100px);
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* dark mode */
+
+.dark {
+  background-color: rgb(28, 28, 28);
+  color: white;
+  transition: all 0.6s ease-in-out;
+}
+
+.panel.dark {
+  background-color: #2c3144;
+  color: white;
+  transition: all 0.6s ease-in-out;
+}
+
+.panel.dark button {
+  color: #2c3144;
+  background-color: white;
+  transition: all 0.6s ease-in-out;
+}
+
+.sliders.active {
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events: all;
+}
+
+.sliders button {
+  position: absolute;
+  top: 0%;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: rgb(73, 73, 73);
+  border: none;
+  color: white;
+  border-radius: 0rem 1rem;
+}
+
+.close-adjustment {
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 20vh;
+}
+
+.panel button {
+  font-size: 1.2rem;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  background: rgb(31, 33, 63);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 0.7rem;
+}
+
+.panel p {
+  font-size: 1.2rem;
+}
+
+.library-panel,
+.generate-panel,
+.save-panel,
+.dark-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.adjust,
+.lock {
+  font-size: 2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 2rem 0rem;
+}
+
+/*  slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 1rem 0rem;
+  width: 100%;
+  position: relative;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+/* containers */
+
+.copy-container,
+.library-container,
+.save-container {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.copy-popup,
+.library-popup,
+.save-popup {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border-radius: 2rem;
+  min-width: 30%;
+  min-height: 30vh;
+  transition: 0.6s ease;
+  transform: translateY(-2rem);
+}
+
+.copy-popup,
+.library-popup,
+.save-popup h4 {
+  font-size: 2rem;
+  padding: 2rem;
+}
+
+.copy-container.active,
+.library-container.active,
+.save-container.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.copy-popup.active,
+.library-popup.active,
+.save-popup.active {
+  transform: translateY(0rem);
+}
+.save-name {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.close-save,
+.close-library {
+  position: fixed;
+  top: 0%;
+  right: 0%;
+  background: rgb(60, 60, 92);
+  color: white;
+  border: none;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  padding: 0.5rem;
+}
+.submit-save {
+  margin: 2rem;
+  padding: 1rem 3rem;
+  background: rgb(60, 60, 92);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+/* darkmode */
+
+:root {
+  --bg-planet-bright: #f2c94c;
+  --bg-planet-shadow: #828894;
+  --bg-planet-lightshadow: #d7d7d820;
+  --dot-size: 0.25rem;
+}
+:root.bg-dark {
+  --bg-color: #2c3144;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+html body label {
+  cursor: pointer;
+  padding: 1rem;
+  position: relative;
+
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+html body label input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+html body label .planet {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(3.75em, 99%, transparent 100%);
+  background-color: var(--bg-planet-bright);
+  background-repeat: no-repeat;
+  position: relative;
+  will-change: background;
+  transition: all 400ms ease;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+html body label .planet::after {
+  content: "";
+  background-color: var(--bg-planet-shadow);
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  border-radius: 50%;
+  will-change: opacity, transform, background-color;
+  opacity: 0;
+  transform: translate(2em, -2em);
+  transition: opacity 400ms ease, transform 400ms ease,
+    background-color 400ms ease;
+}
+
+html body label .elements {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 400ms ease;
+}
+
+html body label .elements svg {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  opacity: 1;
+  transition: transform 400ms ease, opacity 200ms ease, width 200ms ease,
+    height 200ms ease;
+}
+
+html body label .elements svg circle {
+  fill: var(--bg-planet-bright);
+  transition: fill 400ms ease;
+}
+
+html body label .elements svg:first-child {
+  transform: translate(1.8em, 0.35em);
+}
+
+html body label .elements svg:nth-child(2) {
+  transform: translate(2.8em, 0.7em);
+}
+
+html body label .elements svg:nth-child(3) {
+  transform: translate(3.2em, 1.8em);
+}
+
+html body label .elements svg:nth-child(4) {
+  transform: translate(2.8em, 2.8em);
+}
+
+html body label .elements svg:nth-child(5) {
+  transform: translate(1.8em, 3.2em);
+}
+
+html body label .elements svg:nth-child(6) {
+  transform: translate(0.7em, 2.8em);
+}
+
+html body label .elements svg:nth-child(7) {
+  transform: translate(0.35em, 1.8em);
+}
+
+html body label .elements svg:nth-child(8) {
+  transform: translate(0.7em, 0.7em);
+}
+
+html.bg-dark body {
+  background-color: var(--bg-color);
+}
+
+html label input:checked + .planet {
+  --bg-planet-bright: #d7d7d8;
+}
+
+html label input:checked + .planet::after {
+  opacity: 1;
+  transform: translate(0.6em, -0.5em);
+}
+
+html label input:checked ~ .elements {
+  transform: rotate(180deg);
+}
+
+html label input:checked ~ .elements svg:first-child {
+  transform: translate(2em, 1em);
+  opacity: 0;
+}
+
+html label input:checked ~ .elements svg:nth-child(2) {
+  transform: translate(3em, 1.5em);
+  opacity: 0;
+}
+
+html label input:checked ~ .elements svg:nth-child(3) {
+  transform: translate(3em, 2em);
+  opacity: 0;
+}
+
+html label input:checked ~ .elements svg:nth-child(4) {
+  transform: translate(3em, 2em);
+  opacity: 0;
+}
+
+html label input:checked ~ .elements svg:nth-child(5) {
+  transform: translate(1.9em, 2.6em);
+  width: 0.3em;
+  height: 0.3em;
+}
+
+html label input:checked ~ .elements svg:nth-child(5) circle {
+  fill: var(--bg-planet-lightshadow);
+}
+
+html label input:checked ~ .elements svg:nth-child(6) {
+  transform: translate(1.4em, 2.5em);
+  width: 0.3em;
+  height: 0.3em;
+}
+
+html label input:checked ~ .elements svg:nth-child(6) circle {
+  fill: var(--bg-planet-lightshadow);
+}
+
+html label input:checked ~ .elements svg:nth-child(7) {
+  transform: translate(1.1em, 1.6em);
+  width: 0.7em;
+  height: 0.7em;
+}
+
+html label input:checked ~ .elements svg:nth-child(7) circle {
+  fill: var(--bg-planet-lightshadow);
+}
+
+html label input:checked ~ .elements svg:nth-child(8) {
+  width: 0.45em;
+  height: 0.45em;
+  transform: translate(1.7em, 2.1em);
+}
+
+html label input:checked ~ .elements svg:nth-child(8) circle {
+  fill: var(--bg-planet-lightshadow);
+}
