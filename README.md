@@ -1,5 +1,5 @@
 # colorpicker
 
 
-visir :-
-https://github.com/Jatinchourasia/colorpicker
+[**visit here**](https://github.com/Jatinchourasia/colorpicker)
+
