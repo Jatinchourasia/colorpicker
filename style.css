@@ -27,7 +27,7 @@ footer {
   text-align: center;
 }
 
-span {
+footer span {
   color: #ffffff;
 }
 .colors {
@@ -94,7 +94,6 @@ span {
   transform: translateY(0px);
   pointer-events: all;
 }
-
 .sliders button {
   position: absolute;
   top: 0%;
@@ -167,7 +166,6 @@ input[type="range"] {
 }
 
 /* containers */
-
 .copy-container,
 .library-container,
 .save-container {
