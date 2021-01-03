@@ -281,7 +281,7 @@ function savePallet() {
     // generate the pallate for library
 
     const palette = document.createElement("div");
-    palette.classList.add("custom-palette");
+
     const title = document.createElement("h4");
     title.innerText = PaletteObj.name;
     const preview = document.createElement("div");
@@ -310,7 +310,6 @@ function savePallet() {
 
       const paletteIndex = e.target.classList[1];
       initialColors = [];
-      console.log(savedPalettes);
       savedPalettes[paletteIndex].colors.forEach((color, index) => {
         initialColors.push(color);
         colorDivs[index].style.backgroundColor = color;
@@ -335,12 +334,9 @@ function savetoLocal(PaletteObj) {
   let localPalettes;
 
   if (localStorage.getItem("palettes") === null) {
-    console.log("hellow");
     localPalettes = [];
   } else {
-    console.log(localPalettes);
     localPalettes = JSON.parse(localStorage.getItem("palettes"));
-    console.log(localPalettes);
   }
 
   localPalettes.push(PaletteObj);
@@ -360,6 +356,7 @@ function getlocal() {
 
     paletteObject.forEach((PaletteObj) => {
       const palette = document.createElement("div");
+
       palette.classList.add("custom-palette");
       const title = document.createElement("h4");
       title.innerText = PaletteObj.name;

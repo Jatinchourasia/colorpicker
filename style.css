@@ -271,10 +271,6 @@ input[type="range"] {
   padding: 2rem;
 }
 
-.custom-palette.expand {
-  width: 50%;
-}
-
 .small-preview {
   display: flex;
   flex: 2;
