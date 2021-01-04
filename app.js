@@ -422,14 +422,27 @@ function library() {
 function libraryclose() {
   libraryCont.classList.remove("active");
   libraryPop.classList.remove("active");
-  sliderPanel[index].classList.remove("active");
-  libraryPop.classList.add("expand");
+  libraryPop.classList.remove("expand");
+  libraryExpand.classList.remove("active");
+  const custom = document.querySelectorAll(".custom-palette");
+
+  custom.forEach((pall) => {
+    pall.classList.remove("expand");
+  });
 }
 function libraryexpand() {
+  const custom = document.querySelectorAll(".custom-palette");
+
   if (libraryPop.classList.contains("expand")) {
     libraryPop.classList.remove("expand");
+    custom.forEach((pall) => {
+      pall.classList.remove("expand");
+    });
   } else {
     libraryPop.classList.add("expand");
+    custom.forEach((pall) => {
+      pall.classList.add("expand");
+    });
   }
 
   if (libraryExpand.classList.contains("active")) {

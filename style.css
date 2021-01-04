@@ -246,11 +246,16 @@ input[type="range"] {
   width: 90%;
   min-height: 90vh;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  align-content: space-between;
   align-items: center;
   text-align: center;
 }
-
+.library-popup.expand h4 {
+  text-align: center;
+  width: 100%;
+  padding: 2rem;
+}
 .save-name {
   font-size: 1.5rem;
   padding: 1rem;
@@ -269,6 +274,10 @@ input[type="range"] {
   padding: 2rem;
 }
 
+.custom-palette.expand {
+  width: 50%;
+}
+
 .small-preview {
   display: flex;
   flex: 2;
@@ -279,6 +288,7 @@ input[type="range"] {
 
 .small-preview div {
   height: 5rem;
+
   flex: 1;
 }
 
