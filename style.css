@@ -20,7 +20,7 @@ svg {
 }
 
 footer {
-  padding: 0.5em;
+  padding: 0.25em;
   background-color: black;
   color: #a7a7a8;
   font-size: 20px;
@@ -37,7 +37,7 @@ footer span {
 }
 
 .color {
-  height: 80vh;
+  height: 77vh;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -116,10 +116,11 @@ footer span {
 }
 
 .panel {
+  padding: auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  height: 20vh;
+  height: 15vh;
 }
 
 .panel button {
@@ -135,6 +136,7 @@ footer span {
 
 .panel p {
   font-size: 1.2rem;
+  padding-bottom: 10px;
 }
 
 .library-panel,
@@ -234,7 +236,6 @@ input[type="range"] {
   transition: 0.6s ease;
   transform: translateY(0rem);
 }
-
 .library-popup.expand {
   transition: ease 0.5s;
   background: white;
