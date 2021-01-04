@@ -281,6 +281,7 @@ function savePallet() {
     // generate the pallate for library
 
     const palette = document.createElement("div");
+    palette.classList.add("custom-palette");
 
     const title = document.createElement("h4");
     title.innerText = PaletteObj.name;
@@ -421,12 +422,20 @@ function library() {
 function libraryclose() {
   libraryCont.classList.remove("active");
   libraryPop.classList.remove("active");
+  sliderPanel[index].classList.remove("active");
+  libraryPop.classList.add("expand");
 }
 function libraryexpand() {
   if (libraryPop.classList.contains("expand")) {
     libraryPop.classList.remove("expand");
   } else {
     libraryPop.classList.add("expand");
+  }
+
+  if (libraryExpand.classList.contains("active")) {
+    libraryExpand.classList.remove("active");
+  } else {
+    libraryExpand.classList.add("active");
   }
 }
 

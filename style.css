@@ -321,6 +321,9 @@ input[type="range"] {
   border-bottom-left-radius: 1rem;
   padding: 1rem;
 }
+.big-library.active {
+  right: 3%;
+}
 .close-save {
   border-top-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
