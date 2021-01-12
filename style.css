@@ -30,7 +30,9 @@ footer {
 
 footer span {
   color: #ffffff;
+  cursor: pointer;
 }
+
 .colors {
   min-height: 77vh;
   display: flex;
@@ -247,8 +249,8 @@ input[type="range"] {
   width: 90%;
   min-height: 90vh;
   flex-wrap: wrap;
-  justify-content: center;
-  align-content: space-between;
+  justify-content: flex-start;
+  align-content: flex-start;
   align-items: center;
   text-align: center;
 }
@@ -273,6 +275,11 @@ input[type="range"] {
   justify-content: space-evenly;
   width: 100%;
   padding: 2rem;
+}
+
+.custom-palette.del {
+  transition: 0.5s ease;
+  opacity: 0;
 }
 
 .custom-palette.expand {
@@ -326,14 +333,14 @@ input[type="range"] {
 .big-library {
   position: fixed;
   top: 0%;
-  right: 6%;
+  right: 2.4rem;
   background: rgb(127, 127, 235);
   border: none;
   border-bottom-left-radius: 1rem;
   padding: 1rem;
 }
 .big-library.active {
-  right: 3%;
+  right: 2.5rem;
 }
 .close-save {
   border-top-right-radius: 1rem;

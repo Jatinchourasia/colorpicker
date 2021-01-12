@@ -321,6 +321,19 @@ function savePallet() {
       });
       resetInputs();
     });
+
+    deleteBtn.addEventListener("click", (e) => {
+      const item = e.target;
+
+      const colo = item.parentElement;
+      colo.classList.add("del");
+      colo.addEventListener("transitionend", (e) => {
+        colo.remove();
+        const paletteIndex = e.target.classList[1];
+
+        removeLocal(PaletteObj, paletteIndex);
+      });
+    });
     // append to pallete
 
     palette.appendChild(title);
@@ -343,6 +356,21 @@ function savetoLocal(PaletteObj) {
   localPalettes.push(PaletteObj);
   localStorage.setItem("palettes", JSON.stringify(localPalettes));
   saveclose();
+}
+
+function removeLocal(PaletteObj, paletteIndex) {
+  let localPalettes;
+
+  if (localStorage.getItem("palettes") === null) {
+    localPalettes = [];
+  } else {
+    localPalettes = JSON.parse(localStorage.getItem("palettes"));
+  }
+
+  // localStorage.setItem("palettes", JSON.stringify(localPalettes));
+
+  localPalettes.splice(paletteIndex, 1);
+  localStorage.setItem("palettes", JSON.stringify(localPalettes));
 }
 
 function getlocal() {
@@ -396,6 +424,18 @@ function getlocal() {
           updateTextUI(index);
         });
         resetInputs();
+      });
+      deleteBtn.addEventListener("click", (e) => {
+        const item = e.target;
+
+        const colo = item.parentElement;
+        colo.classList.add("del");
+        colo.addEventListener("transitionend", (e) => {
+          colo.remove();
+          const paletteIndex = e.target.classList[1];
+
+          removeLocal(PaletteObj, paletteIndex);
+        });
       });
       // append to pallete
 
