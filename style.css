@@ -20,18 +20,19 @@ svg {
 }
 
 footer {
-  padding: 0.25em;
+  padding: 0.26em;
   background-color: black;
   color: #a7a7a8;
   font-size: 20px;
   text-align: center;
+  margin: 0%;
 }
 
 footer span {
   color: #ffffff;
 }
 .colors {
-  min-height: 80vh;
+  min-height: 77vh;
   display: flex;
   color: rgb(212, 212, 212);
 }
@@ -116,11 +117,10 @@ footer span {
 }
 
 .panel {
-  padding: auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  height: 15vh;
+  min-height: 18.5vh;
 }
 
 .panel button {
